@@ -31,9 +31,16 @@
 
             <div>
                 <label for="cancion" class="block text-sm font-medium text-gray-700 mb-1">
-                    <i class="fa-solid fa-radio text-purple-500 mr-1"></i> Canci&oacute;n y Artista:
+                    <i class="fa-solid fa-radio text-purple-500 mr-1"></i> Canci&oacute;n:
                 </label>
-                <input type="text" id="cancion" required placeholder="Ej. Perfect - Ed Sheeran"
+                <input type="text" id="cancion" required placeholder="Ej. Perfect"
+                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all">
+            </div>
+			 <div>
+                <label for="cancion" class="block text-sm font-medium text-gray-700 mb-1">
+                    <i class="fa-solid fa-radio text-purple-500 mr-1"></i> Artista:
+                </label>
+                <input type="text" id="artista" required placeholder="Ej. Ed Sheeran"
                     class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all">
             </div>
 
@@ -56,16 +63,17 @@
 
     <script>
         document.getElementById('formDedicatoria').addEventListener('submit', function(e) {
-            e.preventDefault(); // Evita que la p·gina se recargue
+            e.preventDefault(); // Evita que la p√°gina se recargue
 
-            // 1. Reemplaza este n˙mero por el tuyo (con cÛdigo de paÌs, sin el signo +)
-            // Ejemplo: 521234567890 (MÈxico), 34123456789 (EspaÒa), 57123456789 (Colombia)
-            // Si lo dejas vacÌo, abrir· WhatsApp para que elijas a quÈ contacto envi·rselo.
+            // 1. Reemplaza este n√∫mero por el tuyo (con c√≥digo de pa√≠s, sin el signo +)
+            // Ejemplo: 521234567890 (M√©xico), 34123456789 (Espa√±a), 57123456789 (Colombia)
+            // Si lo dejas vac√≠o, abrir√° WhatsApp para que elijas a qu√© contacto envi√°rselo.
             const numeroTelefono = "525665067247"; 
 
             // 2. Obtener los valores del formulario
             const nombre = document.getElementById('nombre').value.trim();
             const cancion = document.getElementById('cancion').value.trim();
+			const artista = document.getElementById('artista').value.trim();
             const dedicatoria = document.getElementById('dedicatoria').value.trim();
 
             // 3. Estructurar el mensaje con formato de WhatsApp (* para negritas)
@@ -74,17 +82,17 @@
 
 Nombre: ${nombre}
 Cancion: ${cancion}
-
-Mensaje:
+Artista: ${artista}
+Dedicatoria:
 "${dedicatoria}"`;
 
-            // 4. Codificar el texto para que sea v·lido en una URL
+            // 4. Codificar el texto para que sea v√°lido en una URL
             const mensajeCodificado = encodeURIComponent(mensajeOriginal);
 
             // 5. Construir la URL de la API de WhatsApp
             let urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
 
-            // 6. Redirigir al usuario (abrir· la app de WhatsApp o WhatsApp Web autom·ticamente)
+            // 6. Redirigir al usuario (abrir√° la app de WhatsApp o WhatsApp Web autom√°ticamente)
             window.open(urlWhatsapp, '_blank');
         });
     </script>
