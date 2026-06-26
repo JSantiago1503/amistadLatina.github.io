@@ -1,0 +1,307 @@
+/* Reseteo básico y Tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+/* Barra de Navegación */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #ff007f; /* Rosa Neón */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00f0ff; /* Cian Neón */
+}
+
+/* EFECTO PARALLAX - Configuración Core */
+.parallax-bg {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Esto crea el efecto parallax */
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+/* Imágenes de fondo (Usando Unsplash con temática DJ/Conciertos) */
+.bg-1 {
+    /*background-image: url('https://images.unsplash.com/photo-1516873240891-4bf014598ab4?q=80&w=1920');*/
+	background-image: url('images/logo2.png');
+}
+
+.bg-2 {
+    background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1920');
+}
+
+.bg-3 {
+    background-image: url('https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?q=80&w=1920');
+	
+}
+
+/* Textos sobre las imágenes parallax */
+.caption {
+    position: absolute;
+    left: 0;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption .border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px 40px;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #ff007f;
+    box-shadow: 0 0 15px #ff007f;
+}
+
+.caption .bg-transperant {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00f0ff;
+    box-shadow: 0 0 15px #00f0ff;
+}
+
+.subtitle {
+    color: #ff007f;
+    margin-top: 25px;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Secciones de Contenido Plano */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-dark {
+    background-color: #0a0a0a;
+    color: #ddd;
+}
+
+.section-light {
+    background-color: #111;
+    color: #fff;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    position: relative;
+    display: inline-block;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff007f, #00f0ff);
+}
+
+.section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Componente de Eventos */
+.events-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border-left: 5px solid #00f0ff;
+    transition: transform 0.3s;
+}
+
+.event-card:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.event-card .date {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ff007f;
+}
+
+.event-card .details {
+    text-align: left;
+    flex-grow: 1;
+    margin-left: 30px;
+}
+
+.event-card .details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.event-card .details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.btn-tickets {
+    padding: 10px 25px;
+    background: transparent;
+    border: 2px solid #00f0ff;
+    color: #00f0ff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-tickets:hover {
+    background: #00f0ff;
+    color: #000;
+    box-shadow: 0 0 15px #00f0ff;
+}
+
+/* Contacto y Redes Sociales */
+.email {
+    font-size: 1.5rem !important;
+    color: #00f0ff;
+    margin-top: 20px !important;
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 40px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 15px;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #ff007f;
+    transform: translateY(-5px);
+}
+
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.8rem;
+    color: #555;
+    border-top: 1px solid #111;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Responsividad para Móviles y Tablets)
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Desactivar Parallax real en móviles (mejora rendimiento y evita bugs de renderizado) */
+    .parallax-bg {
+        background-attachment: scroll;
+        height: 60vh; /* Altura más corta para pantallas pequeñas */
+    }
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .caption .border {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        letter-spacing: 5px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+    }
+
+    .event-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 15px;
+    }
+
+    .event-card .details {
+        text-align: center;
+        margin: 15px 0;
+    }
+	
+}
+
+

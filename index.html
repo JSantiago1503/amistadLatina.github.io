@@ -3,13 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dedicatoria Musical</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>DJ ADRIAN | Official Website</title>
+	<link rel="stylesheet" href="syle-formulario.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gradient-to-br from-purple-600 to-indigo-900 min-h-screen flex items-center justify-center p-4">
+<body>
 
-    <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden transform transition-all p-6 md:p-8">
+    <nav class="navbar">
+        <div class="logo"><img src="images/logo1.png" style="width:150px; height:130px;" /></div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#biografia">Bio</a></li>
+            <li><a href="#eventos">Dedicatorias</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio" class="parallax-bg bg-1">
+        <div class="caption">
+            <span class="border">FEEL THE BEAT</span>
+            <p class="subtitle">LATINA / SALSA / ROCK</p>
+        </div>
+    </header>
+
+    <section id="biografia" class="section section-dark">
+        <h2>SOBRE MÍ</h2>
+        <p>Con más de una década en la escena de la música, DJ Adrian ha transformado pistas de baile de Texas. Su estilo único fusiona bajos profundos con melodías hipnóticas, creando una experiencia inmersiva que se queda grabada en la memoria.</p>
+    </section>
+
+    <div id="eventos" class="parallax-bg bg-2">
+        <div class="caption">
+            <span class="border bg-transperant">DEDICATORIAS</span>
+        </div>
+    </div>
+
+    <section class="section section-light">
+        <!-- <div class="events-container"> -->
+             <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden transform transition-all p-6 md:p-8" style="margin:auto; text-align:left;">
         
         <div class="text-center mb-6">
             <div class="inline-block bg-purple-100 p-3 rounded-full text-purple-600 mb-3">
@@ -23,7 +54,7 @@
             
             <div>
                 <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">
-                    <i class="fa-solid fa-user text-purple-500 mr-1"></i> Tu Nombre:
+                    <i class="fa-solid fa-user text-purple-500 mr-1"></i> Tu Nombre :
                 </label>
                 <input type="text" id="nombre" required placeholder="Ej. Carlos"
                     class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all">
@@ -41,7 +72,7 @@
                     <i class="fa-solid fa-user text-purple-500 mr-1"></i> Artista:
                 </label>
                 <input type="text" id="artista" required placeholder="Ej. Ed Sheeran"
-                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all">
+                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all" style="color:black;">
             </div>
 
             <div>
@@ -49,7 +80,7 @@
                     <i class="fa-solid fa-heart text-purple-500 mr-1"></i> Tu Dedicatoria:
                 </label>
                 <textarea id="dedicatoria" rows="4" required placeholder="Escribe aqu&iacute; tu mensaje especial..."
-                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all resize-none"></textarea>
+                    class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all resize-none" style="color:black;" ></textarea>
             </div>
 
             <button type="submit" 
@@ -60,8 +91,51 @@
             
         </form>
     </div>
+           <!-- </div> -->
+        
+    </section>
 
-    <script>
+    <div id="contacto" class="parallax-bg bg-3">
+        <div class="caption">
+            <span class="border">BOOKING</span>
+        </div>
+    </div>
+
+    <section class="section section-dark">
+        <h2>CONTACTO</h2>
+        <p>Para contrataciones, remixes o prensa, ponte en contacto a través de:</p>
+        <p class="email">adrianmanzano36@gmail.com</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a id="WhatsAppId" href="#"  style=""><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-soundcloud"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 DJ ADRIAN. Diseñado para romper la pista.</p>
+    </footer>
+
+
+ <script>
+
+
+document.getElementById("WhatsAppId").addEventListener("click", function(e) {
+   e.preventDefault();
+const numeroTelefono = "525665067247"; 
+const mensajeOriginal = 'Me gustaria informacion sobre sus servicios y precios como Dj/Sonido'
+// 4. Codificar el texto para que sea válido en una URL
+            const mensajeCodificado = encodeURIComponent(mensajeOriginal);
+
+            // 5. Construir la URL de la API de WhatsApp
+            let urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
+
+            // 6. Redirigir al usuario (abrirá la app de WhatsApp o WhatsApp Web automáticamente)
+            window.open(urlWhatsapp, '_blank');
+  });
+
+
         document.getElementById('formDedicatoria').addEventListener('submit', function(e) {
             e.preventDefault(); // Evita que la página se recargue
 
@@ -96,6 +170,7 @@ Dedicatoria:
             window.open(urlWhatsapp, '_blank');
         });
     </script>
+
 </body>
 </html>
 
